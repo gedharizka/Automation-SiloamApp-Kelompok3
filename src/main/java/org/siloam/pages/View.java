@@ -1,6 +1,6 @@
 package org.siloam.pages;
 
-import org.siloam.Driver.DriverSingleton;
+import org.siloam.drivers.DriverSingelton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +11,7 @@ public class View {
     private WebDriver driver;
 
     public View() {
-        this.driver = DriverSingleton.getDriver();
+        this.driver = DriverSingelton.getDriver();
         PageFactory.initElements(driver, this);
     }
 

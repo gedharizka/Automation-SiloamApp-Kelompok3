@@ -1,7 +1,6 @@
 package org.siloam;
 
-import org.siloam.Driver.DriverSingleton;
-//import org.siloam.pages.LoginPage;
+import org.siloam.drivers.DriverSingelton;
 import org.siloam.pages.View;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -49,7 +48,7 @@ public class ViewAndExport {
     @Then("Masukan Tanggal dua")
     public void Masukan_tanggal_dua() {
         view.tanggaldua();
-        DriverSingleton.delay(5);
+        DriverSingelton.delay(5);
         extentTest.log(LogStatus.PASS,"Masukan Tanggal dua");
     }
 
@@ -62,21 +61,21 @@ public class ViewAndExport {
     @And("Masukan Tanggal delapan")
     public void masukan_tanggal_depalan() {
         view.tanggaldelapan();
-        DriverSingleton.delay(5);
+        DriverSingelton.delay(5);
         extentTest.log(LogStatus.PASS,"Masukan Tanggal delapan");
     }
 
     @And("klick Button Filter")
     public void klick_button_filter() {
         view.buttonFilter();
-        DriverSingleton.delay(5);
+        DriverSingelton.delay(5);
         extentTest.log(LogStatus.PASS,"klick Button Filter");
     }
 
     @And("Masukan Tanggal Satu")
     public void Masukan_tanggal_satu() {
         view.tanggalSatuNov();
-        DriverSingleton.delay(5);
+        DriverSingelton.delay(5);
         extentTest.log(LogStatus.PASS,"Masukan Tanggal Satu");
     }
 
@@ -171,7 +170,7 @@ public class ViewAndExport {
     @And("Klick Button Foto Awal JPEG")
        public void klick_button_foto_awal_jpeg(){
         view.setFotoAwalJPEG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button Foto Awal JPEG");
     }
 
@@ -179,7 +178,7 @@ public class ViewAndExport {
     @And("Klick Button Foto Tujuan JPEG")
     public void klick_button_foto_tujuan_JPEG(){
      view.setFotoTujuanJPEG();
-     DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button Foto Tujuan JPEG");
     }
 
@@ -187,7 +186,7 @@ public class ViewAndExport {
     @And("Klick Button PDF Agreement JPEG")
     public void Klick_button_PDF_agreement_JPEG(){
         view.setPdfAgreementJPEG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button PDF Agreement JPEG");
     }
 
@@ -195,7 +194,7 @@ public class ViewAndExport {
     @And("Klick Button Foto Awal JPG")
     public void klick_button_foto_awal_jpg(){
         view.setFotoAwalJPG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button Foto Awal JPG");
     }
 
@@ -204,7 +203,7 @@ public class ViewAndExport {
     @And("Klick Button Foto Tujuan JPG")
     public void klick_button_foto_tujuan_JPG(){
         view.setFotoTujuanJPG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button Foto Tujuan JPG");
     }
 
@@ -212,7 +211,7 @@ public class ViewAndExport {
     @And("Klick Button PDF Agreement JPG")
     public void Klick_button_PDF_agreement_JPG(){
         view.setPdfAgreementJPG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button PDF Agreement JPG");
     }
 
@@ -220,7 +219,7 @@ public class ViewAndExport {
     @And("Klick Button Foto Awal PNG")
     public void klick_button_foto_awal_png(){
         view.setFotoAwalPNG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button Foto Awal PNG");
     }
 
@@ -228,7 +227,7 @@ public class ViewAndExport {
     @And("Klick Button Foto Tujuan PNG")
     public void klick_button_foto_tujuan_png(){
         view.setFotoTujuanPNG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button Foto Tujuan PNG");
     }
 
@@ -236,7 +235,7 @@ public class ViewAndExport {
     @And("Klick Button PDF Agreement PNG")
     public void Klick_button_PDF_agreement_png(){
         view.setPdfAgreementPNG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button PDF Agreement PNG");
     }
 
@@ -244,7 +243,7 @@ public class ViewAndExport {
     @And("Klick Button View JPEG")
     public void Klick_Button_View_JPEG(){
         view.setViewJPEG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button View JPEG");
     }
 
@@ -252,7 +251,7 @@ public class ViewAndExport {
     @And("Klick Button View JPG")
     public void Klick_Button_View_JPG(){
         view.setViewJPG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button View JPG");
     }
 
@@ -260,7 +259,7 @@ public class ViewAndExport {
     @And("Klick Button View PNG")
     public void Klick_Button_View_PNG(){
         view.setViewPNG();
-        DriverSingleton.delay(3);
+        DriverSingelton.delay(3);
         extentTest.log(LogStatus.PASS,"Klick Button View PNG");
     }
 

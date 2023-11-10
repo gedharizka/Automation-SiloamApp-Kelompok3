@@ -4,14 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.siloam.Driver.DriverSingleton;
+import org.siloam.drivers.DriverSingelton;
+import org.siloam.drivers.DriverSingelton;
 
 
 public class ModulSatuLogin {
     private WebDriver driver;
 
     public ModulSatuLogin(){
-        this.driver = DriverSingleton.getDriver();
+        this.driver = DriverSingelton.getDriver();
         PageFactory.initElements(driver, this);
     }
 

@@ -5,7 +5,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.*;
 import org.openqa.selenium.WebDriver;
-import org.siloam.Driver.DriverSingleton;
+import org.siloam.drivers.DriverSingelton;
 import org.siloam.utils.Constants;
 import org.siloam.utils.TestCases;
 import org.siloam.utils.Utils;
@@ -18,8 +18,8 @@ public class Hooks {
     static ExtentReports reports=new ExtentReports("target/extent-report.html");
     @Before
     public static void setUp() {
-        DriverSingleton.getInstance(Constants.Chrome);
-        driver = DriverSingleton.getDriver();
+        DriverSingelton.getInstance(Constants.Chrome);
+        driver = DriverSingelton.getDriver();
         TestCases[] test = TestCases.values();
         extentTest = reports.startTest(test[Utils.testCount].getTestCaseName());
         Utils.testCount++;
@@ -43,7 +43,7 @@ public class Hooks {
 
     @AfterAll
     public static void finish() {
-        DriverSingleton.delay(3);
-        DriverSingleton.classObjectInstance();
+        DriverSingelton.delay(3);
+        DriverSingelton.closeObjectInstance();
     }
 }
