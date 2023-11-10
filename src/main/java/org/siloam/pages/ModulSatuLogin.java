@@ -4,13 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.siloam.drivers.DriverSingelton;
+import org.siloam.Driver.DriverSingleton;
 
-public class Example {
+
+public class ModulSatuLogin {
     private WebDriver driver;
 
-    public Example(){
-        this.driver = DriverSingelton.getDriver();
+    public ModulSatuLogin(){
+        this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
     }
 

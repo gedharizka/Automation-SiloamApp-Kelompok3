@@ -5,14 +5,14 @@ import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.siloam.pages.Example;
+import org.siloam.pages.ModulSatuLogin;
 import org.siloam.utils.Constants;
 import org.testng.Assert;
 
 public class ExampleTest {
 
     private static WebDriver driver;
-    private static Example example = new Example();
+    private static ModulSatuLogin example = new ModulSatuLogin();
     private static ExtentTest extentTest;
 
     public ExampleTest(){
