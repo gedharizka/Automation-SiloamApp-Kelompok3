@@ -38,10 +38,10 @@ build/
 .DS_Store
 
 ### Webdriver path ###
-#src/main/java/org/siloam/drivers/**
-#src/main/java/org/siloam/driver/**
-# src/main/java/org/siloam/Drivers/**
-# src/main/java/org/siloam/Driver/**
+src/main/java/org/siloam/drivers/**
+src/main/java/org/siloam/driver/**
+src/main/java/org/siloam/Drivers/**
+src/main/java/org/siloam/Driver/**
 
 ### Utils ####
 # src/main/java/org/siloam/utils/**
