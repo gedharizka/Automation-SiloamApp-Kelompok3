@@ -1,5 +1,6 @@
 package org.siloam.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,11 @@ import org.siloam.utils.DriverSingelton;
 
 public class EditFotoPage {
     private WebDriver driver;
-    //Alert alert = driver.switchTo().alert();
+    public EditFotoPage() {
+        this.driver = DriverSingelton.getDriver();
+        PageFactory.initElements(driver, this);
+    }
+
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/a[1]/img[1]")
     private WebElement clickFileAfter;
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]/img[1]")
@@ -25,11 +30,13 @@ public class EditFotoPage {
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]/a[1]/span[1]")
     private WebElement afterButton;
 
-    @FindBy(id = "file")
+    @FindBy(xpath = "//*[@id='file']")
     private WebElement choiceFileButton;
 
     @FindBy(id = "btnSave")
     private WebElement simpanFileButton;
+    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
+    private WebElement btnConfirm;
 
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[2]/td[4]/a[1]/span[1]")
     private WebElement beforeButton;
@@ -38,11 +45,6 @@ public class EditFotoPage {
     private WebElement ttdButton;
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/a[1]")
     private WebElement submitButton;
-    public EditFotoPage() {
-        this.driver = DriverSingelton.getDriver();
-        //driver.get("https://dev.ptdika.com/siloam/panel/login/");
-        PageFactory.initElements(driver, this);
-    }
 
     public void clickAfterToSee() {
         clickFileAfter.click();
@@ -60,42 +62,48 @@ public class EditFotoPage {
 
     public void activityDeleteFileAfter() {
         deleteFileAfter.click();
-        //alert.accept();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
         driver.navigate().back();
     }
 
     public void activityDeleteFileBefore() {
         deleteFileBefore.click();
-        //alert.accept();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
         driver.navigate().back();
     }
     public void activityDeleteFileTtd() {
         deleteFileTtd.click();
-        //alert.accept();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
         driver.navigate().back();
     }
     public void addFileFotoAfter() {
         afterButton.click();
-        //choiceFileButton.click();
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
         delay(10000);
-        //simpanFileButton.click();
-        //delay(5000);
+        simpanFileButton.click();
+        btnConfirm.click();
+        delay(5000);
     }
 
     public void addFileFotoBefore() {
         beforeButton.click();
-        //choiceFileButton.click();
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
         delay(10000);
-        //simpanFileButton.click();
-        //delay(5000);
+        simpanFileButton.click();
+        btnConfirm.click();
+        delay(5000);
     }
 
     public void addFileFotoTTD() {
         ttdButton.click();
-        //choiceFileButton.click();
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
         delay(10000);
-        //simpanFileButton.click();
-        //delay(5000);
+        simpanFileButton.click();
+        btnConfirm.click();
+        delay(5000);
         submitButton.click();
     }
 

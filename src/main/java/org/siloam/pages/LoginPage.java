@@ -1,16 +1,20 @@
 package org.siloam.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.siloam.utils.DriverSingelton;
-import org.siloam.utils.strategies.DriverStrategy;
 
 public class LoginPage {
     private WebDriver driver;
-
+    public LoginPage(){
+        this.driver = DriverSingelton.getDriver();
+        driver.get("https://dev.ptdika.com/siloam/panel/login/");
+        PageFactory.initElements(driver, this);
+    }
     @FindBy(name = "username")
     private WebElement usernameInput;
 
@@ -38,7 +42,7 @@ public class LoginPage {
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/form[1]/div[5]/div[1]/span[1]/span[1]/span[1]/span[1]")
     private WebElement spanKota;
 
-    @FindBy(xpath = "//*[@id='select2-ktp_city-result-tw2u-KABUPATEN TAPANULI TENGAH']")
+    @FindBy(xpath = "/html/body/span/span/span[1]/input")
     private WebElement spanOptionKota;
     @FindBy(id = "origin_faskes")
     private WebElement faskesInput;
@@ -73,14 +77,6 @@ public class LoginPage {
     @FindBy(xpath = "/html/body/div[5]/div[1]/div/div/div/div[2]/div/div")
     private WebElement selanjutnyaButton;
 
-
-
-    public LoginPage() {
-        this.driver = DriverSingelton.getDriver();
-        driver.get("https://dev.ptdika.com/siloam/panel/login/");
-        PageFactory.initElements(driver, this);
-    }
-
     public void activityLogin(String username, String password) {
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
@@ -96,13 +92,15 @@ public class LoginPage {
         alamatInput.sendKeys(alamat);
         spanKota.click();
         delay(5000);
-        //spanOptionKota.click();
-        //delay(5000);
+        spanOptionKota.sendKeys("KABUPATEN ACEH SINGKIL");
+        spanOptionKota.sendKeys(Keys.RETURN);
+        delay(5000);
         faskesInput.sendKeys(faskesFirst);
         spanTujuan.click();
         delay(5000);
-        //spanOptionTujuan.click();
-        //delay(5000);
+        spanOptionTujuan.sendKeys("Siloam Clinic Meruya || Kota Jakarta Barat");
+        spanOptionTujuan.sendKeys(Keys.RETURN);
+        delay(5000);
         alasanInput.sendKeys(alasan);
         delay(5000);
         saveDataButton.click();
@@ -110,27 +108,29 @@ public class LoginPage {
 
     public void addFileFotoAfter() {
         afterButton.click();
-        //choiceFileButton.click();
-        delay(15000);
-        //simpanFileButton.click();
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        delay(10000);
+        simpanFileButton.click();
+        btnConfirm.click();
+        delay(5000);
     }
-
     public void addFileFotoBefore() {
         beforeButton.click();
-        //choiceFileButton.click();
-        delay(15000);
-        //simpanFileButton.click();
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        delay(5000);
+        simpanFileButton.click();
+        btnConfirm.click();
+        delay(5000);
     }
-
     public void addFileFotoTTD() {
         ttdButton.click();
-        //choiceFileButton.click();
-        delay(15000);
-        //simpanFileButton.click();
-        //delay(5000);
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        delay(5000);
+        simpanFileButton.click();
+        btnConfirm.click();
+        delay(5000);
         selanjutnyaButton.click();
     }
-
     public WebElement getWelcomeMessage() {
         return driver.findElement(By.xpath("//*[@id='sidebar']/div/div[1]/ul[1]/li/a/div[3]"));
     }

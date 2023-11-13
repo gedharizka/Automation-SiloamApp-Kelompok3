@@ -1,6 +1,7 @@
 package org.siloam.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +10,10 @@ import org.siloam.utils.DriverSingelton;
 
 public class EditDataPersonalPage {
     private WebDriver driver;
-
+    public EditDataPersonalPage() {
+        this.driver = DriverSingelton.getDriver();
+        PageFactory.initElements(driver, this);
+    }
     @FindBy(xpath= "//button[@id='btnEdit']")
     private WebElement editButton;
     @FindBy(id = "name")
@@ -42,11 +46,6 @@ public class EditDataPersonalPage {
     @FindBy(xpath = "//*[@id='page-container']/div/div[2]/form/div[3]")
     private WebElement saveDataButton;
 
-    public EditDataPersonalPage() {
-        this.driver = DriverSingelton.getDriver();
-        //driver.get("https://dev.ptdika.com/siloam/panel/login/");
-        PageFactory.initElements(driver, this);
-    }
     public void setInputName(String name) {
         inputName.clear();
         inputName.sendKeys(name);
@@ -65,8 +64,8 @@ public class EditDataPersonalPage {
     }
     public void getKota() {
         spanKota.click();
-        delay(5000);
-        //spanOptionKota.click();
+        spanOptionKota.sendKeys("KABUPATEN ACEH SINGKIL");
+        spanOptionKota.sendKeys(Keys.RETURN);
     }
 
     public void setFaskesInput(String faskes) {
@@ -76,8 +75,8 @@ public class EditDataPersonalPage {
 
     public void getTujuan() {
         spanTujuan.click();
-        delay(5000);
-        //spanOptionTujuan.click();
+        spanOptionTujuan.sendKeys("Siloam Clinic Meruya || Kota Jakarta Barat");
+        spanOptionTujuan.sendKeys(Keys.RETURN);
     }
 
     public void setAlasanInput(String alasan) {
@@ -90,9 +89,7 @@ public class EditDataPersonalPage {
     public void clickEditBtn() {
         editButton.click();
     }
-
     public WebElement getWelcomeMessage() {
-
         return driver.findElement(By.xpath("//*[@id='content']/h1"));
     }
 

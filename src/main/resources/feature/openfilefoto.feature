@@ -1,4 +1,4 @@
-Feature: Modul TTd Digital
+Feature: Modul Edit and view TTd Digital
 
     #TCC.HRM.001
   Scenario: Lihat file Personal Pasien

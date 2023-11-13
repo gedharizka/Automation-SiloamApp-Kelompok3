@@ -1,5 +1,7 @@
 package org.siloam;
 
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
@@ -13,31 +15,27 @@ import org.siloam.utils.DriverSingelton;
 
 public class EditDataFileTest {
     private static WebDriver driver;
-    private static EditFotoPage editfile;
-    @BeforeAll
-    public static void setUp(){
-        DriverSingelton.getInstance(Constants.Edge);
-        driver = DriverSingelton.getDriver();
-        editfile = new EditFotoPage();
-    }
+    private static EditFotoPage editfile = new EditFotoPage();
+    private static ExtentTest extentTest;
 
-    @AfterAll
-    public static void  finish(){
-        DriverSingelton.delay(3);
-        DriverSingelton.closeObjectInstance();
+    public EditDataFileTest(){
+        driver = Hooks.driver;
+        extentTest = Hooks.extentTest;
     }
-
     @Given("User is on the ttd digital")
     public void user_is_on_the_ttd_digital_page() {
-        System.out.println("Edit data dan file pasien");
+        System.out.println("Edit data  adn file patient");
     }
     @When("User klik tombol foto after")
     public void user_klik_tombol_foto_after() {
         editfile.clickAfterToSee();
+        extentTest.log(LogStatus.PASS,"user show file patient after");
     }
     @When("User klik tombol foto before")
     public void user_klik_tombol_foto_before() {
+
         editfile.clickBeforeToSee();
+        extentTest.log(LogStatus.PASS,"user show file patient before");
     }
     @When("User klik tombol foto ttd")
     public void user_klik_tombol_foto_ttd() {
@@ -56,30 +54,42 @@ public class EditDataFileTest {
 
     @When("User klik tombol hapus after")
     public void user_klik_tombol_hapus_after() {
+
         editfile.activityDeleteFileAfter();
+        extentTest.log(LogStatus.PASS,"user delete file patient after");
     }
     @When("User klik tombol hapus before")
     public void user_klik_tombol_hapus_before() {
+
         editfile.activityDeleteFileBefore();
+        extentTest.log(LogStatus.PASS,"user show file patient before");
     }
     @When("User klik tombol hapus ttd")
     public void user_klik_tombol_hapus_ttd() {
+
         editfile.activityDeleteFileTtd();
+        extentTest.log(LogStatus.PASS,"user show file patient ttd");
     }
 
     @When("User klik button edit file after klik choice klik open klik simpan")
     public void user_add_file_after() {
+
         editfile.addFileFotoAfter();
+        extentTest.log(LogStatus.PASS,"user edit file patient after");
     }
 
     @When("User klik button edit file before klik choice klik open klik simpan")
     public void user_add_file_before() {
+
         editfile.addFileFotoBefore();
+        extentTest.log(LogStatus.PASS,"user edit file patient before");
     }
 
     @When("User klik button edit file ttd klik choice klik open klik simpan")
     public void user_add_file_ttd() {
+
         editfile.addFileFotoTTD();
+        extentTest.log(LogStatus.PASS,"user show file patient ttd");
     }
     public static void delay(int seconds) {
         try {

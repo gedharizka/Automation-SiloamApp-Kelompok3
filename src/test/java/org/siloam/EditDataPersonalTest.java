@@ -1,5 +1,6 @@
 package org.siloam;
 
+import com.relevantcodes.extentreports.ExtentTest;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
@@ -13,18 +14,12 @@ import org.siloam.utils.DriverSingelton;
 
 public class EditDataPersonalTest {
     private static WebDriver driver;
-    private static EditDataPersonalPage editdata;
-    @BeforeAll
-    public static void setUp(){
-        DriverSingelton.getInstance(Constants.Edge);
-        driver = DriverSingelton.getDriver();
-        editdata = new EditDataPersonalPage();
-    }
+    private static EditDataPersonalPage editdata = new EditDataPersonalPage();
+    private static ExtentTest extentTest;
 
-    @AfterAll
-    public static void  finish(){
-        DriverSingelton.delay(3);
-        DriverSingelton.closeObjectInstance();
+    public EditDataPersonalTest(){
+        driver = Hooks.driver;
+        extentTest = Hooks.extentTest;
     }
 
     @Given("User is on the ttd digital page")

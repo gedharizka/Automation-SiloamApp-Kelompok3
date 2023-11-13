@@ -1,4 +1,4 @@
-Feature: Modul Input TTd Digital
+Feature: Modul Input Login TTD Digital
 
     #TCC.HRM.001
   Scenario: Login Valid Test

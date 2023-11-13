@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.siloam.utils.DriverSingelton;
 
-
 public class Example {
     private WebDriver driver;
 
