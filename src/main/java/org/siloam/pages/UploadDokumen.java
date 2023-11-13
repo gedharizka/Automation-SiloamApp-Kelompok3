@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.siloam.drivers.DriverSingelton;
 
 import java.util.Random;
@@ -12,7 +14,7 @@ import java.util.Random;
 public class UploadDokumen {
     private WebDriver driver;
 
-    public UploadDokumen(){
+    public UploadDokumen() {
         this.driver = DriverSingelton.getDriver();
         PageFactory.initElements(driver, this);
     }
@@ -42,7 +44,10 @@ public class UploadDokumen {
     private WebElement btnCloseX;
     @FindBy(xpath = "//*[@id=\"default-tab-2\"]/div[1]/div/table/tbody[1]/tr[1]/td[1]/div/input")
     private WebElement fotoFaskesAwal;
-
+    @FindBy(xpath = "//*[@id=\"message\"]")
+    private WebElement errMsgUpload;
+    @FindBy(xpath = "//a[@class='nav-link active']//span[@class='d-sm-block d-none']")
+    private WebElement menuTabTtdDigital;
 
 
     //
@@ -50,42 +55,53 @@ public class UploadDokumen {
 
     // function
 
-    public void handleButtonFaskesAwal(){
+    public void handleButtonFaskesAwal() {
         btnFotoFaskesAwal.click();
     }
+    public void handleButtonFaskesTujuan() {
+        btnFotoFaskesTujuan.click();
+    }
+    public void handleButtonTandaTangan() {
+        btnTtdDigital.click();
+    }
 
-    public void handleButtonUpload(){
+    public void handleButtonUpload() {
         btnUpload.sendKeys("D:\\Pribadi\\Code\\SQA\\Tugas_Akhir\\Siloam_Cucumber\\public\\images\\test_jpg.jpg");
     }
 
-    public void handleCustomUpload(String filePath){
+    public void handleCustomUpload(String filePath) {
         this.btnUpload.sendKeys(filePath);
     }
 
-    public void handleButtonSimpan(){
+    public void handleButtonSimpan() {
         btnSave.click();
     }
 
-    public void handleButtonSwalOk(){
+    public void handleButtonSwalOk() {
         btnSwalOk.click();
     }
-    public void handleBtnClose(){
+
+    public void handleBtnClose() {
         btnCloseX.click();
     }
-    public void handleBtnCancle(){
+
+    public void handleBtnCancle() {
         btnCancel.click();
     }
 
-    public String getFotoFaskesAwal(){
+    public String getFotoFaskesAwal() {
         return fotoFaskesAwal.getAttribute("value");
     }
 
+    public String getErrMessageUpload() {
+        return errMsgUpload.getText();
+    }
 
-    public String uploadDokumenIsActive(){
+    public String uploadDokumenIsActive() {
         return btnFotoFaskesAwal.getText();
     }
 
-    public void unggahDokumen(){
+    public void unggahDokumen() {
         btnFotoFaskesAwal.click();
         btnUpload.sendKeys("D:\\Pribadi\\Code\\SQA\\Tugas_Akhir\\Siloam_Cucumber\\public\\images\\test_jpg.jpg");
         btnSave.click();
@@ -108,7 +124,12 @@ public class UploadDokumen {
         alert.accept();
     }
 
-    public String tabTddDigital(){
+    public void handleBtnSelanjutnya(){
+        btnSelanjutnya.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+    }
+    public String tabTddDigital() {
         return textDataPersonal.getText();
     }
 
@@ -123,4 +144,5 @@ public class UploadDokumen {
 
         return sb.toString();
     }
+
 }

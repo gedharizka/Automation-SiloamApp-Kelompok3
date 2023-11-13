@@ -42,6 +42,7 @@ src/main/java/org/siloam/drivers/**
 src/main/java/org/siloam/driver/**
 src/main/java/org/siloam/Drivers/**
 src/main/java/org/siloam/Driver/**
+FailedTestScreenshot/**
 
 ### Utils ####
 # src/main/java/org/siloam/utils/**

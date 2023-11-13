@@ -39,7 +39,28 @@ public enum TestCases {
     T25("View Data PNG"),
     T26("Preview Data JPEG"),
     T27("Priview Data JPG"),
-    T28("Priview Data PNG");
+    T28("Priview Data PNG"),
+    T29("faskes awal  User input file format .jpg dokumen"),
+    T30("faskes awal  User input file format .pdf dokumen"),
+    T31("faskes awal  User input file jpg large than 5MB dokumen"),
+    T32("faskes awal User input file format .jpg dokumen then click cancel"),
+    T33("faskes awal  User input file format .jpg  dokumen modal closed x"),
+    T34("faskes awal  User input file format .png dokumen faskes awal"),
+    T35("faskes tujuan  User input file format .jpg dokumen"),
+    T36("faskes tujuan  User input file format .pdf dokumen"),
+    T37("faskes tujuan  User input file jpg large than 5MB dokumen"),
+    T38("faskes tujuan User input file format .jpg dokumen then click cancel"),
+    T39("faskes tujuan User input file format .jpg  dokumen modal closed x"),
+    T40("faskes tujuan  User input file format .png dokumen"),
+    T41("tanda tangan digital  User input file format .jpg dokumen"),
+    T42("tanda tangan digital  User input file format .pdf dokumen"),
+    T43("tanda tangan digital  User input file jpg large than 5MB dokumen"),
+    T44("tanda tangan digital User input file format .jpg dokumen then click cancel"),
+    T45("tanda tangan digital User input file format .jpg  dokumen modal closed(x)"),
+    T46("tanda tangan digital  User input file format .png dokumen"),
+    T47("user input .jpg faskes awal, faskes tujuan, tanda tangan digital"),
+
+    ;
 
     private String testCaseName;
 
