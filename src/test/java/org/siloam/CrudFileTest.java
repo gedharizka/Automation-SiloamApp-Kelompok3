@@ -18,7 +18,7 @@ public class CrudFileTest {
         driver = Hooks.driver;
         extentTest = Hooks.extentTest;
     }
-    @Given("User is on the ttd digital")
+    @Given("User is on the ttd digital panel")
     public void user_is_on_the_ttd_digital_page() {
         System.out.println("Edit data  adn file patient");
     }

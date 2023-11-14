@@ -31,14 +31,14 @@ public class EditDataPersonalPage {
     @FindBy(xpath = "//*[@id='select2-ktp_city-container']s")
     private WebElement spanKota;
 
-    @FindBy(xpath = "//*[@id='default-tab-1']/form/div[5]/div/span/span[1]/span")
+    @FindBy(xpath = "//input[@role='textbox']")
     private WebElement spanOptionKota;
     @FindBy(id = "origin_faskes")
     private WebElement faskesInput;
     @FindBy(xpath = "//*[@id='select2-destination_faskes-container']")
     private WebElement spanTujuan;
 
-    @FindBy(xpath = "//*[@id='default-tab-1']/form/div[7]/div/span/span[1]/span")
+    @FindBy(xpath = "//input[@role='textbox']")
     private WebElement spanOptionTujuan;
     @FindBy(name = "reason")
     private WebElement alasanInput;
@@ -64,7 +64,7 @@ public class EditDataPersonalPage {
     }
     public void getKota() {
         spanKota.click();
-        spanOptionKota.sendKeys("KABUPATEN ACEH SINGKIL");
+        spanOptionKota.sendKeys("KOTA BATAM");
         spanOptionKota.sendKeys(Keys.RETURN);
     }
 
@@ -75,7 +75,7 @@ public class EditDataPersonalPage {
 
     public void getTujuan() {
         spanTujuan.click();
-        spanOptionTujuan.sendKeys("Siloam Clinic Meruya || Kota Jakarta Barat");
+        spanOptionTujuan.sendKeys("Siloam Clinic Meruya || Kota Jakarta Utara");
         spanOptionTujuan.sendKeys(Keys.RETURN);
     }
 

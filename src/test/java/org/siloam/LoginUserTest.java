@@ -44,7 +44,7 @@ public class LoginUserTest {
     }
     @When("User input seluruh data pasien benar")
     public void user_input_seluruh_data_pasien_benar() {
-        loginUserPage.activityInputData("Hengki", "196502427603275", "128811309427154680", "Jakarta Utara Bagian timur", "Siloam loam", "Tidak tau itulah");
+        loginUserPage.activityInputData("Hengki", "197549427603275", "3588907309427154680", "Jakarta Utara Bagian timur", "Siloam loam", "Tidak tau itulah");
         extentTest.log(LogStatus.PASS,"user input patient data correctly");
     }
 

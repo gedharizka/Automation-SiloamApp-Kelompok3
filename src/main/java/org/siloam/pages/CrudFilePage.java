@@ -52,10 +52,12 @@ public class CrudFilePage {
     }
 
     public void clickBeforeToSee(){
+        delay(3000);
         clickFileBefore.click();
         driver.navigate().back();
     }
     public void clickTtdToSee(){
+        delay(3000);
         clickFileTTD.click();
         driver.navigate().back();
     }

@@ -2,7 +2,7 @@ Feature: Modul Edit And View TTd Digital
 
     #TCC.HRM.001
   Scenario: Lihat file Personal Pasien
-  Given User is on the ttd digital
+  Given User is on the ttd digital panel
     When User klik tombol foto after
     When User klik tombol foto before
     When User klik tombol foto ttd
