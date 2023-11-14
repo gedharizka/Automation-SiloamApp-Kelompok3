@@ -1,18 +1,14 @@
 package org.siloam.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.siloam.utils.DriverSingelton;
 
-public class LoginPage {
+public class LoginUserPage {
     private WebDriver driver;
-    public LoginPage(){
+    public LoginUserPage(){
         this.driver = DriverSingelton.getDriver();
-        driver.get("https://dev.ptdika.com/siloam/panel/login/");
         PageFactory.initElements(driver, this);
     }
     @FindBy(name = "username")
@@ -49,7 +45,7 @@ public class LoginPage {
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/form[1]/div[7]/div[1]/span[1]/span[1]/span[1]/span[1]")
     private WebElement spanTujuan;
 
-    @FindBy(xpath = "//*[@id='select2-destination_faskes-result-ucfk-21||Siloam Medika Canggu||Bali']")
+    @FindBy(xpath = "//input[@role='textbox']")
     private WebElement spanOptionTujuan;
     @FindBy(name = "reason")
     private WebElement alasanInput;
@@ -57,7 +53,7 @@ public class LoginPage {
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/form[1]/div[9]/div[1]/button[1]")
     private WebElement saveDataButton;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/a[1]/span[1]")
+    @FindBy(xpath = "//span[normalize-space()='Foto Faskes Awal']")
     private WebElement afterButton;
 
     @FindBy(xpath = "//input[@id='file']")
@@ -66,12 +62,12 @@ public class LoginPage {
     @FindBy(xpath = "//button[@id='btnSave']")
     private WebElement simpanFileButton;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[2]/tr[1]/td[2]/a[1]/span[1]")
+    @FindBy(xpath = "//span[normalize-space()='Foto Faskes Tujuan']")
     private WebElement beforeButton;
     @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
     private WebElement btnConfirm;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[3]/tr[1]/td[2]/a[1]/span[1]")
+    @FindBy(xpath = "//span[normalize-space()='Tanda Tangan Digital']")
     private WebElement ttdButton;
 
     @FindBy(xpath = "/html/body/div[5]/div[1]/div/div/div/div[2]/div/div")
@@ -94,10 +90,8 @@ public class LoginPage {
         delay(5000);
         spanOptionKota.sendKeys("KABUPATEN ACEH SINGKIL");
         spanOptionKota.sendKeys(Keys.RETURN);
-        delay(5000);
         faskesInput.sendKeys(faskesFirst);
         spanTujuan.click();
-        delay(5000);
         spanOptionTujuan.sendKeys("Siloam Clinic Meruya || Kota Jakarta Barat");
         spanOptionTujuan.sendKeys(Keys.RETURN);
         delay(5000);
@@ -109,27 +103,32 @@ public class LoginPage {
     public void addFileFotoAfter() {
         afterButton.click();
         choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
-        delay(10000);
+        delay(3000);
         simpanFileButton.click();
+        delay(8000);
         btnConfirm.click();
-        delay(5000);
+        delay(3000);
     }
     public void addFileFotoBefore() {
         beforeButton.click();
         choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
-        delay(5000);
+        delay(3000);
         simpanFileButton.click();
+        delay(8000);
         btnConfirm.click();
-        delay(5000);
+        delay(3000);
     }
     public void addFileFotoTTD() {
         ttdButton.click();
         choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
-        delay(5000);
+        delay(3000);
         simpanFileButton.click();
+        delay(8000);
         btnConfirm.click();
-        delay(5000);
+        delay(3000);
         selanjutnyaButton.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
     }
     public WebElement getWelcomeMessage() {
         return driver.findElement(By.xpath("//*[@id='sidebar']/div/div[1]/ul[1]/li/a/div[3]"));

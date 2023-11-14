@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.siloam.utils.DriverSingelton;
 
-public class EditFotoPage {
+public class CrudFilePage {
     private WebDriver driver;
-    public EditFotoPage() {
+    public CrudFilePage() {
         this.driver = DriverSingelton.getDriver();
         PageFactory.initElements(driver, this);
     }
@@ -27,7 +27,7 @@ public class EditFotoPage {
     private WebElement deleteFileBefore;
     @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[3]/td[3]/div[1]/a[2]/i[1]")
     private WebElement deleteFileTtd;
-    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]/a[1]/span[1]")
+    @FindBy(xpath = "//tbody/tr[1]/td[4]/a[1]/span[1]")
     private WebElement afterButton;
 
     @FindBy(xpath = "//*[@id='file']")
@@ -38,12 +38,12 @@ public class EditFotoPage {
     @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
     private WebElement btnConfirm;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[2]/td[4]/a[1]/span[1]")
+    @FindBy(xpath = "//tbody/tr[2]/td[4]/a[1]/span[1]")
     private WebElement beforeButton;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[3]/td[4]/a[1]/span[1]")
+    @FindBy(xpath = "//tbody/tr[3]/td[4]/a[1]/span[1]")
     private WebElement ttdButton;
-    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/a[1]")
+    @FindBy(xpath = "//a[@class='btn btn-primary']")
     private WebElement submitButton;
 
     public void clickAfterToSee() {
@@ -82,29 +82,31 @@ public class EditFotoPage {
     public void addFileFotoAfter() {
         afterButton.click();
         choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
-        delay(10000);
+        delay(3000);
         simpanFileButton.click();
+        delay(8000);
         btnConfirm.click();
-        delay(5000);
+        delay(3000);
     }
 
     public void addFileFotoBefore() {
         beforeButton.click();
         choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
-        delay(10000);
+        delay(3000);
         simpanFileButton.click();
+        delay(8000);
         btnConfirm.click();
-        delay(5000);
+        delay(3000);
     }
 
     public void addFileFotoTTD() {
         ttdButton.click();
         choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
-        delay(10000);
+        delay(3000);
         simpanFileButton.click();
+        delay(8000);
         btnConfirm.click();
-        delay(5000);
-        submitButton.click();
+        delay(3000);
     }
 
     public WebElement getWelcomeMessage() {

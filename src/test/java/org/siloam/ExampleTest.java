@@ -22,7 +22,7 @@ public class ExampleTest {
 
     @Given("User on login page")
     public void user_access_login_page(){
-        driver.get(Constants.BaseUrl);
+        driver.get(Constants.URLSILOMA);
         extentTest.log(LogStatus.PASS,"User on login page");
     }
     @When("user input valid credential")

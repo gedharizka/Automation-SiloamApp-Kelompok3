@@ -5,9 +5,9 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {
-                "src/main/resources/features/login.feature",
-                "src/main/resources/features/editdatapersonal.feature",
-                "src/main/resources/features/openfilefoto.feature",
+                "src/main/resources/feature/LoginUser.feature",
+                "src/main/resources/feature/EditDataPersonal.feature",
+                "src/main/resources/feature/CrudFile.feature",
                 //"src/main/resources/feature/Example.feature"
         },
         glue = "org.siloam",

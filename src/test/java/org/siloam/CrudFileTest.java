@@ -2,23 +2,19 @@ package org.siloam;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.siloam.pages.EditFotoPage;
-import org.siloam.utils.Constants;
-import org.siloam.utils.DriverSingelton;
+import org.siloam.pages.CrudFilePage;
 
-public class EditDataFileTest {
+public class CrudFileTest {
     private static WebDriver driver;
-    private static EditFotoPage editfile = new EditFotoPage();
+    private static CrudFilePage editfile = new CrudFilePage();
     private static ExtentTest extentTest;
 
-    public EditDataFileTest(){
+    public CrudFileTest(){
         driver = Hooks.driver;
         extentTest = Hooks.extentTest;
     }
