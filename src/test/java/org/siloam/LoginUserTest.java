@@ -26,7 +26,7 @@ public class LoginUserTest {
 
     @When("User input username password click button login")
     public void user_input_username_password_click_button_login() {
-        loginUserPage.activityLogin("D6200927", "1997-10-23");
+        loginUserPage.activityLogin("K6400001", "a");
         extentTest.log(LogStatus.PASS,"user input username and password");
     }
 
@@ -34,7 +34,7 @@ public class LoginUserTest {
     public void user_should_be_logged_in() {
         WebElement welcomeMessage = loginUserPage.getWelcomeMessage();
 
-        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("ELVA YUNDRA RINDYANA")) {
+        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("YESSA AINURROCHMA")) {
             System.out.println("Pengguna berhasil login.");
             extentTest.log(LogStatus.PASS,"user success login");
         } else {
@@ -44,7 +44,7 @@ public class LoginUserTest {
     }
     @When("User input seluruh data pasien benar")
     public void user_input_seluruh_data_pasien_benar() {
-        loginUserPage.activityInputData("Hengki", "197549427603275", "3588907309427154680", "Jakarta Utara Bagian timur", "Siloam loam", "Tidak tau itulah");
+        loginUserPage.activityInputData("Hengki Tester", "1753427975765", "99374307307127154680", "Jakarta Utara Bagian timur", "Siloam loam", "Tidak tau itulah");
         extentTest.log(LogStatus.PASS,"user input patient data correctly");
     }
 
@@ -52,7 +52,7 @@ public class LoginUserTest {
     public void user_simpan_data_pasien_benar() {
         WebElement welcomeMessage = loginUserPage.getWelcomeMessage();
 
-        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("ELVA YUNDRA RINDYANA")) {
+        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("YESSA AINURROCHMA")) {
             System.out.println("Pengguna berhasil login.");
         } else {
             System.out.println("Pengguna gagal login.");

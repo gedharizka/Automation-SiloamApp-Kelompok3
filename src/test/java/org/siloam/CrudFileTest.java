@@ -41,7 +41,7 @@ public class CrudFileTest {
     public void user_on_ttd_digital() {
         WebElement welcomeMessage = editfile.getWelcomeMessage();
 
-        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("ELVA YUNDRA RINDYANA")) {
+        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("YESSA AINURROCHMA")) {
             System.out.println("Pengguna dalam halaman ttd digital.");
         } else {
             System.out.println("Pengguna tidak dalam halaman ttd digital.");

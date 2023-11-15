@@ -33,11 +33,11 @@ public class EditDataPersonalTest {
     }
     @When("User input nomor bpjs pasien benar")
     public void user_input_nomor_bpjs_pasien_benar() {
-        editdata.setNoBpjsInput("1356892843567");
+        editdata.setNoBpjsInput("1356861843567");
     }
     @When("User input nomor ktp pasien benar")
     public void user_input_nomor_ktp_pasien_benar() {
-        editdata.setInputName("1356892843567543");
+        editdata.setInputName("1056873843567543");
     }
     @When("User input alamat pasien benar")
     public void user_input_alamat_pasien_benar() {
@@ -67,7 +67,7 @@ public class EditDataPersonalTest {
     public void user_edit_data_pasien() {
         WebElement welcomeMessage = editdata.getWelcomeMessage();
 
-        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("ELVA YUNDRA RINDYANA")) {
+        if (welcomeMessage.isDisplayed() && welcomeMessage.getText().equals("YESSA AINURROCHMA")) {
             System.out.println("Pengguna dalam halaman ttd digital.");
         } else {
             System.out.println("Pengguna tidak dalam halaman ttd digital.");

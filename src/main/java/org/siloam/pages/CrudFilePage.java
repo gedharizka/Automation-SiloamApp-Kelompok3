@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.siloam.utils.DriverSingelton;
+import org.openqa.selenium.JavascriptExecutor;
+
 
 public class CrudFilePage {
     private WebDriver driver;
@@ -48,65 +50,68 @@ public class CrudFilePage {
 
     public void clickAfterToSee() {
         clickFileAfter.click();
-        driver.navigate().back();
+        driver.close();
     }
 
     public void clickBeforeToSee(){
-        delay(3000);
+        delay(5000);
         clickFileBefore.click();
-        driver.navigate().back();
+        driver.close();
     }
     public void clickTtdToSee(){
-        delay(3000);
+        delay(5000);
         clickFileTTD.click();
-        driver.navigate().back();
+        driver.close();
     }
 
     public void activityDeleteFileAfter() {
         deleteFileAfter.click();
         Alert alert = driver.switchTo().alert();
         alert.accept();
-        driver.navigate().back();
+        driver.switchTo();
     }
 
     public void activityDeleteFileBefore() {
+        delay(5000);
         deleteFileBefore.click();
         Alert alert = driver.switchTo().alert();
         alert.accept();
         driver.navigate().back();
     }
     public void activityDeleteFileTtd() {
+        delay(5000);
         deleteFileTtd.click();
         Alert alert = driver.switchTo().alert();
         alert.accept();
         driver.navigate().back();
     }
     public void addFileFotoAfter() {
+        delay(5000);
         afterButton.click();
         choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
         delay(3000);
         simpanFileButton.click();
         delay(8000);
         btnConfirm.click();
-        delay(3000);
+        delay(5000);
     }
 
     public void addFileFotoBefore() {
         beforeButton.click();
-        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\Screenshot 2023-07-05 190016.png");
         delay(3000);
         simpanFileButton.click();
         delay(8000);
         btnConfirm.click();
-        delay(3000);
+        delay(5000);
     }
 
     public void addFileFotoTTD() {
         ttdButton.click();
-        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\Screenshot 2023-09-01 194619.png");
         delay(3000);
         simpanFileButton.click();
-        delay(8000);
+        delay(10000);
         btnConfirm.click();
         delay(3000);
     }

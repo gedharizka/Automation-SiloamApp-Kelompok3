@@ -102,7 +102,7 @@ public class LoginUserPage {
 
     public void addFileFotoAfter() {
         afterButton.click();
-        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\Screenshot 2023-09-01 194619.png");
         delay(3000);
         simpanFileButton.click();
         delay(8000);
@@ -111,7 +111,7 @@ public class LoginUserPage {
     }
     public void addFileFotoBefore() {
         beforeButton.click();
-        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\Screenshot 2023-09-06 101141.png");
         delay(3000);
         simpanFileButton.click();
         delay(8000);
@@ -120,7 +120,7 @@ public class LoginUserPage {
     }
     public void addFileFotoTTD() {
         ttdButton.click();
-        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\IMG_20230328_141032.jpg");
+        choiceFileButton.sendKeys("C:\\Users\\LENOVO\\Documents\\JuaraCoding\\Automation-SiloamApp-Kelompok3\\file\\Screenshot 2023-09-06 101141.png");
         delay(3000);
         simpanFileButton.click();
         delay(8000);

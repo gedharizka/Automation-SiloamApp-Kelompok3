@@ -28,22 +28,22 @@ public class EditDataPersonalPage {
     @FindBy(id = "address")
     private WebElement alamatInput;
 
-    @FindBy(xpath = "//*[@id='select2-ktp_city-container']s")
+    @FindBy(xpath = "//*[@id='select2-ktp_city-container']")
     private WebElement spanKota;
 
-    @FindBy(xpath = "//input[@role='textbox']")
+    @FindBy(xpath = "/html/body/span/span/span[1]/input")
     private WebElement spanOptionKota;
     @FindBy(id = "origin_faskes")
     private WebElement faskesInput;
     @FindBy(xpath = "//*[@id='select2-destination_faskes-container']")
     private WebElement spanTujuan;
 
-    @FindBy(xpath = "//input[@role='textbox']")
+    @FindBy(xpath = "/html/body/span/span/span[1]/input")
     private WebElement spanOptionTujuan;
     @FindBy(name = "reason")
     private WebElement alasanInput;
 
-    @FindBy(xpath = "//*[@id='page-container']/div/div[2]/form/div[3]")
+    @FindBy(xpath = "//*[@id='btnUpdate']")
     private WebElement saveDataButton;
 
     public void setInputName(String name) {
@@ -64,7 +64,7 @@ public class EditDataPersonalPage {
     }
     public void getKota() {
         spanKota.click();
-        spanOptionKota.sendKeys("KOTA BATAM");
+        spanOptionKota.sendKeys("KOTA BOGOR");
         spanOptionKota.sendKeys(Keys.RETURN);
     }
 
