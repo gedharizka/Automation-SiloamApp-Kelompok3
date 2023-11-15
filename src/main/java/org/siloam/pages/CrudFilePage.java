@@ -50,25 +50,25 @@ public class CrudFilePage {
 
     public void clickAfterToSee() {
         clickFileAfter.click();
-        driver.close();
+        driver.navigate().back();
     }
 
     public void clickBeforeToSee(){
         delay(5000);
         clickFileBefore.click();
-        driver.close();
+        driver.navigate().back();
     }
     public void clickTtdToSee(){
         delay(5000);
         clickFileTTD.click();
-        driver.close();
+        driver.navigate().back();
     }
 
     public void activityDeleteFileAfter() {
         deleteFileAfter.click();
         Alert alert = driver.switchTo().alert();
         alert.accept();
-        driver.switchTo();
+        driver.navigate().back();
     }
 
     public void activityDeleteFileBefore() {
