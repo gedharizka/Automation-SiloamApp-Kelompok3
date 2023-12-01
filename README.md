@@ -1,5 +1,8 @@
 # Siloam App Automation
 
+### Detail Document Test scenario
+[Test Case & Assignee Task](https://docs.google.com/spreadsheets/d/1NxJnz_9NRx95DFzTo8qcPgM9ndlcCzHYH3pRE1HMmSE/edit?usp=sharing)
+
 ####  Manual Testing
 | Tester |Total tescase  |Pass|Fail|TotalStep|
 |--|--|--|--|--|
@@ -22,6 +25,6 @@
 
 ## Contributor
 
-- [@Gedha Rizka](https://www.github.com/octokatherine)
+- [@Gedha Rizka](https://www.github.com/gedharizka)
 - [@Fery_Oktabrian](https://www.github.com/feryokta16)
 
